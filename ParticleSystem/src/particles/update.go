@@ -65,34 +65,40 @@ func (s *System) Update() {
 		partsizeX := 10 * v.ScaleX
 		partsizeY := 10 * v.ScaleY
 		if config.General.Bounce {
-			if v.PositionX <= 0+partsizeX || v.PositionX >= float64(config.General.WindowSizeX)-partsizeX {
+			if v.PositionX <= 0 || v.PositionX >= float64(config.General.WindowSizeX)-partsizeX {
 				v.SpeedX = -(v.SpeedX)
 				//debug color (rebord)
 				if config.General.StatusDebug {
 					v.ColorRed, v.ColorGreen, v.ColorBlue = 1, 0.4, 0 //orange
 				}
 			}
-			if v.PositionY <= 0+partsizeY || v.PositionY >= float64(config.General.WindowSizeY)-partsizeY {
+			if v.PositionY <= 0 || v.PositionY >= float64(config.General.WindowSizeY)-partsizeY {
 				v.SpeedY = -(v.SpeedY)
 				//debug color (rebord)
 				if config.General.StatusDebug {
 					v.ColorRed, v.ColorGreen, v.ColorBlue = 1, 0.4, 0 //orange
 				}
+				v.SpeedY = v.SpeedY / 1.1
+			} else {
+				if config.General.Gravity {
+					v.SpeedY += config.General.GravityForce
+				}
 			}
 		}
 		//gravité
 		//ajout à pos = vers le bas
-		if config.General.Gravity {
-			v.SpeedY += config.General.GravityForce
-		} else {
-			v.PositionY += v.SpeedY
-		}
+
 		//rotation
 		if config.General.ContinuousRotation {
 			v.Rotation += v.Rotation / 10
 		}
 		// par défaut
 		//mouvement
-		v.PositionX += v.SpeedX
+		if v.PositionY > 0 {
+			v.PositionY += v.SpeedY
+		}
+		if v.PositionX > 0 {
+			v.PositionX += v.SpeedX
+		}
 	}
 }

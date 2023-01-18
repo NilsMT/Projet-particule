@@ -31,7 +31,7 @@ func Test_Gravity_None(t *testing.T) {
 func Test_Gravity_Negative(t *testing.T) {
 	config.General.SpawnRate = 0
 	config.General.InitNumParticles = 1
-	config.General.GravityEnabled, config.General.OutsideForbidden, config.General.LifetimeEnabled, config.General.DecayEnabled, config.General.SpawnType = true, false, false, false, "default"
+	config.General.GravityEnabled, config.General.OutsideForbidden, config.General.LifetimeEnabled, config.General.DecayEnabled, config.General.SpawnType = true, false, false, false, "middle"
 
 	config.General.GravityForceY = -1
 
@@ -50,7 +50,7 @@ func Test_Gravity_Negative(t *testing.T) {
 func Test_Gravity_Positive(t *testing.T) {
 	config.General.SpawnRate = 0
 	config.General.InitNumParticles = 1
-	config.General.GravityEnabled, config.General.OutsideForbidden, config.General.LifetimeEnabled, config.General.DecayEnabled, config.General.SpawnType = true, false, false, false, "default"
+	config.General.GravityEnabled, config.General.OutsideForbidden, config.General.LifetimeEnabled, config.General.DecayEnabled, config.General.SpawnType = true, false, false, false, "middle"
 
 	config.General.GravityForceY = 1
 
@@ -69,7 +69,7 @@ func Test_Gravity_Positive(t *testing.T) {
 func Test_No_Gravity_None(t *testing.T) {
 	config.General.SpawnRate = 0
 	config.General.InitNumParticles = 1
-	config.General.GravityEnabled, config.General.OutsideForbidden, config.General.LifetimeEnabled, config.General.DecayEnabled, config.General.SpawnType = false, false, false, false, "default"
+	config.General.GravityEnabled, config.General.OutsideForbidden, config.General.LifetimeEnabled, config.General.DecayEnabled, config.General.SpawnType = false, false, false, false, "middle"
 
 	config.General.GravityForceY = 0
 
@@ -88,7 +88,7 @@ func Test_No_Gravity_None(t *testing.T) {
 func Test_No_Gravity_Negative(t *testing.T) {
 	config.General.SpawnRate = 0
 	config.General.InitNumParticles = 1
-	config.General.GravityEnabled, config.General.OutsideForbidden, config.General.LifetimeEnabled, config.General.DecayEnabled, config.General.SpawnType = false, false, false, false, "default"
+	config.General.GravityEnabled, config.General.OutsideForbidden, config.General.LifetimeEnabled, config.General.DecayEnabled, config.General.SpawnType = false, false, false, false, "middle"
 
 	config.General.GravityForceY = -1
 
@@ -107,7 +107,7 @@ func Test_No_Gravity_Negative(t *testing.T) {
 func Test_No_Gravity_Positive(t *testing.T) {
 	config.General.SpawnRate = 0
 	config.General.InitNumParticles = 1
-	config.General.GravityEnabled, config.General.OutsideForbidden, config.General.LifetimeEnabled, config.General.DecayEnabled, config.General.SpawnType = false, false, false, false, "default"
+	config.General.GravityEnabled, config.General.OutsideForbidden, config.General.LifetimeEnabled, config.General.DecayEnabled, config.General.SpawnType = false, false, false, false, "middle"
 
 	config.General.GravityForceY = 1
 
@@ -130,7 +130,7 @@ func Test_No_Gravity_Positive(t *testing.T) {
 func Test_Inside_Inside(t *testing.T) {
 	config.General.SpawnRate = 0
 	config.General.InitNumParticles = 1
-	config.General.GravityEnabled, config.General.OutsideForbidden, config.General.LifetimeEnabled, config.General.DecayEnabled, config.General.SpawnType = false, true, false, false, "default"
+	config.General.GravityEnabled, config.General.OutsideForbidden, config.General.LifetimeEnabled, config.General.DecayEnabled, config.General.SpawnType = false, true, false, false, "middle"
 
 	s := NewSystem()
 	v := s.Content.Front().Value.(*Particle) 
@@ -145,7 +145,7 @@ func Test_Inside_Inside(t *testing.T) {
 func Test_Inside_Outside(t *testing.T) {
 	config.General.SpawnRate = 0
 	config.General.InitNumParticles = 1
-	config.General.GravityEnabled, config.General.OutsideForbidden, config.General.LifetimeEnabled, config.General.DecayEnabled, config.General.SpawnType = false, true, false, false, "default"
+	config.General.GravityEnabled, config.General.OutsideForbidden, config.General.LifetimeEnabled, config.General.DecayEnabled, config.General.SpawnType = false, true, false, false, "middle"
 
 	s := NewSystem()
 	v := s.Content.Front().Value.(*Particle)
@@ -164,7 +164,7 @@ func Test_Inside_Outside(t *testing.T) {
 func Test_No_Inside_Outside(t *testing.T) {
 	config.General.SpawnRate = 0
 	config.General.InitNumParticles = 1
-	config.General.GravityEnabled, config.General.OutsideForbidden, config.General.LifetimeEnabled, config.General.DecayEnabled, config.General.SpawnType = false, false, false, false, "default"
+	config.General.GravityEnabled, config.General.OutsideForbidden, config.General.LifetimeEnabled, config.General.DecayEnabled, config.General.SpawnType = false, false, false, false, "middle"
 
 	s := NewSystem()
 	v := s.Content.Front().Value.(*Particle)
@@ -218,7 +218,7 @@ func Test_No_Middle(t *testing.T) {
 func Test_Lifetime_None(t *testing.T) {
 	config.General.SpawnRate = 0
 	config.General.InitNumParticles = 1
-	config.General.GravityEnabled, config.General.OutsideForbidden, config.General.LifetimeEnabled, config.General.DecayEnabled, config.General.SpawnType = false, false, true, false, "default"
+	config.General.GravityEnabled, config.General.OutsideForbidden, config.General.LifetimeEnabled, config.General.DecayEnabled, config.General.SpawnType = false, false, true, false, "middle"
 
 	config.General.LifetimeMax = 0
 	config.General.LifetimeMin = 0
@@ -235,7 +235,7 @@ func Test_Lifetime_None(t *testing.T) {
 func Test_Lifetime_Pos(t *testing.T) {
 	config.General.SpawnRate = 0
 	config.General.InitNumParticles = 1
-	config.General.GravityEnabled, config.General.OutsideForbidden, config.General.LifetimeEnabled, config.General.DecayEnabled, config.General.SpawnType = false, false, true, false, "default"
+	config.General.GravityEnabled, config.General.OutsideForbidden, config.General.LifetimeEnabled, config.General.DecayEnabled, config.General.SpawnType = false, false, true, false, "middle"
 
 	config.General.LifetimeMax = 1
 	config.General.LifetimeMin = 1
@@ -252,7 +252,7 @@ func Test_Lifetime_Pos(t *testing.T) {
 func Test_No_Lifetime_None(t *testing.T) {
 	config.General.SpawnRate = 0
 	config.General.InitNumParticles = 1
-	config.General.GravityEnabled, config.General.OutsideForbidden, config.General.LifetimeEnabled, config.General.DecayEnabled, config.General.SpawnType = false, false, false, false, "default"
+	config.General.GravityEnabled, config.General.OutsideForbidden, config.General.LifetimeEnabled, config.General.DecayEnabled, config.General.SpawnType = false, false, false, false, "middle"
 
 	config.General.LifetimeMax = 0
 	config.General.LifetimeMin = 0
@@ -269,7 +269,7 @@ func Test_No_Lifetime_None(t *testing.T) {
 func Test_No_Lifetime_Pos(t *testing.T) {
 	config.General.SpawnRate = 0
 	config.General.InitNumParticles = 1
-	config.General.GravityEnabled, config.General.OutsideForbidden, config.General.LifetimeEnabled, config.General.DecayEnabled, config.General.SpawnType = false, false, false, false, "default"
+	config.General.GravityEnabled, config.General.OutsideForbidden, config.General.LifetimeEnabled, config.General.DecayEnabled, config.General.SpawnType = false, false, false, false, "middle"
 
 	config.General.LifetimeMax = 1
 	config.General.LifetimeMin = 1
@@ -290,7 +290,7 @@ func Test_Decay(t *testing.T) {
 
 	config.General.SpawnRate = 0
 	config.General.InitNumParticles = 1
-	config.General.GravityEnabled, config.General.OutsideForbidden, config.General.LifetimeEnabled, config.General.DecayEnabled, config.General.SpawnType = false, false, false, true, "default"
+	config.General.GravityEnabled, config.General.OutsideForbidden, config.General.LifetimeEnabled, config.General.DecayEnabled, config.General.SpawnType = false, false, false, true, "middle"
 
 	config.General.DecayColorR = 0
 	config.General.DecayTime = 1
@@ -310,7 +310,7 @@ func Test_No_Decay(t *testing.T) {
 
 	config.General.SpawnRate = 0
 	config.General.InitNumParticles = 1
-	config.General.GravityEnabled, config.General.OutsideForbidden, config.General.LifetimeEnabled, config.General.DecayEnabled, config.General.SpawnType = false, false, false, false, "default"
+	config.General.GravityEnabled, config.General.OutsideForbidden, config.General.LifetimeEnabled, config.General.DecayEnabled, config.General.SpawnType = false, false, false, false, "middle"
 	config.General.DecayColorR = 0
 	config.General.DecayTime = 1
 

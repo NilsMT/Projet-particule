@@ -1,0 +1,58 @@
+{
+	"WindowTitle": "Project particles",
+	"WindowSizeX": 700,
+  	"WindowSizeY": 700,
+	"ParticleImage": "assets/particle.png",
+	"Debug": true,
+	"InitNumParticles": 0,
+	"SpawnX": 500,
+	"SpawnY": 500,
+	"SpawnRate": 1,
+
+	"GravityEnabled": true,
+	"GravityForceX":0,
+	"GravityForceY":-0.1,
+
+	"OutsideForbidden": true,
+
+	"LifetimeEnabled": false,
+	"LifetimeMax": 100,
+	"LifetimeMin": 100,
+
+	"DecayEnabled": true,
+	"DecayTime":100,
+	"DecayOpacity": 0,
+	"DecayScaleX": 1,
+	"DecayScaleY": 1,
+	"DecayColorR":1,
+	"DecayColorG":0,
+	"DecayColorB":0,
+	"DecayRotation": 0,
+
+	"KeyInput":true,
+	"ShowConfigStatus": true,
+
+	"SpawnType":"cursor",
+	"Shape":"default",
+	"ShapeSize":150,
+
+	"DefaultRotation":0,
+	"DefaultColorR":1,
+	"DefaultColorG":1,
+	"DefaultColorB":0,
+	"DefaultScaleX":1,
+	"DefaultScaleY":1,
+	"DefaultOpacity":1,
+
+	"RangeValue":false,
+
+	"RangeDirectionY":1,
+	"RangeDirectionX":1,
+	"RangeScaleY":0.1,
+	"RangeScaleX":0.1,
+	"RangeColorR":0.1,
+	"RangeColorG":0.1,
+	"RangeColorB":0,
+	"RangeOpacity":0,
+	"RangeRotation":0.1
+}
